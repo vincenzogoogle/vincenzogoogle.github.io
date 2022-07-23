@@ -1,0 +1,4 @@
+!! AVVISO !! Questo sito, quando visitato con almeno uno di questi parametri url: ci, af, ip, ct, users, progs:  invierà i dati raccolti a un bot telegram.
+QUESTO AVVIENE A SOLO SCOPO DIMOSTRATIVO. I dati non saranno letti.
+Questa pagina funge da dimostrazione per un possibile attacco in Windows dove viene utilizzato un collegamento a Chrome per nascondere l'esecuzione di codice in background.
+Semplicemente è necessario copiare il collegamento di Chrome (o di qualsiasi programma) dal menu Start, e modificare la Destinazione per includere un comando cmd che potrà quindi eseguire qualsiasi codice senza essere visibile.
